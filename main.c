@@ -1,5 +1,5 @@
-
 #include <stdio.h>
+#include "mapa/mapa.h"
 
 // Funcao que mostra o menu principal
 void mostrarMenu() {
@@ -18,6 +18,7 @@ void mostrarMenu() {
 // Funcao que apresenta as instrucoes do jogo
 void mostrarInstrucoes() {
     printf("\n========== INSTRUCOES ==========\n");
+
     printf("\nExplore o sertao nordestino.");
     printf("\nConheca personagens e cumpra missoes.");
     printf("\nEnfrente desafios durante sua jornada.");
@@ -48,13 +49,9 @@ void mostrarCreditos() {
 void iniciarJogo() {
     printf("\n========== INICIO DA AVENTURA ==========\n");
 
-    // A historia sera conectada aqui quando
-    // a parte da Emilly estiver pronta
-    printf("\nA aventura pelo sertao esta sendo preparada!\n");
-    printf("Em breve voce podera iniciar sua jornada.\n");
-
-    printf("\nPressione ENTER para voltar ao menu...");
-    getchar();
+    // Abre o mapa do sertao
+    // Futuramente a historia da Emilly sera conectada aqui
+    explorarMapa();
 }
 
 // Funcao principal do jogo
