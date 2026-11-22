@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "mapa.h"
+#include "../historia/historia.h"
 
 // Funcao que mostra os lugares do mapa
 void mostrarMapa() {
@@ -15,7 +16,7 @@ void mostrarMapa() {
 }
 
 // Funcao que permite explorar os lugares
-void explorarMapa() {
+void explorarMapa(Personagem *jogador, Inventario *inv) {
     int opcao;
     int caractere;
 
@@ -74,8 +75,12 @@ void explorarMapa() {
                 break;
         }
 
-        // Espera o jogador apertar ENTER
+        // Acontece a historia do lugar e espera o jogador apertar ENTER
         if (opcao >= 1 && opcao <= 4) {
+            // Se o jogo acabou (vitoria ou derrota), volta ao menu
+            if (eventoDoLugar(opcao, jogador, inv)) {
+                return;
+            }
             printf("\nPressione ENTER para continuar...");
             getchar();
         }

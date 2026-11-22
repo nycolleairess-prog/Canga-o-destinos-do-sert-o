@@ -1,8 +1,12 @@
 #ifndef MAPA_H
 #define MAPA_H
 
-// Funcoes utilizadas no mapa do jogo
+#include "../personagens/personagem.h"
+
+// Mostra os lugares do mapa
 void mostrarMapa();
-void explorarMapa();
+
+// Permite explorar os lugares (recebe o jogador e o inventario)
+void explorarMapa(Personagem *jogador, Inventario *inv);
 
 #endif

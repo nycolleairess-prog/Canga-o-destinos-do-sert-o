@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "mapa/mapa.h"
+#include "historia/historia.h"
 
 // Funcao que mostra o menu principal
 void mostrarMenu() {
@@ -47,11 +48,16 @@ void mostrarCreditos() {
 
 // Funcao que inicia a aventura
 void iniciarJogo() {
+    Personagem jogador;
+    Inventario inv;
+
     printf("\n========== INICIO DA AVENTURA ==========\n");
 
-    // Abre o mapa do sertao
-    // Futuramente a historia da Emilly sera conectada aqui
-    explorarMapa();
+    iniciarInventario(&inv);        // Pedro: bolsa vazia
+    escolherPersonagem(&jogador);   // Joao: escolha da classe
+    iniciarHistoria();              // Emilly: prepara as missoes
+    mostrarIntroducao(&jogador);    // Emilly: comeco da historia
+    explorarMapa(&jogador, &inv);   // Arthur: mapa com a historia em cada lugar
 }
 
 // Funcao principal do jogo

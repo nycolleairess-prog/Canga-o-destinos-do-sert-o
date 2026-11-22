@@ -1,7 +1,7 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 
-#include "inventario.h"
+#include "../inventario/inventario.h"
 
 // Dados do personagem controlado pelo jogador
 typedef struct {
